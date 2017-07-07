@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env python3
 
 import paho.mqtt.client as mqtt
@@ -12,8 +10,9 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
   if msg.payload.decode() == "Hello world!":
-    print("Yes!")
-    client.disconnect()
+	print(str(msg.payload))	#print message sent    
+	#print("Yes!")
+    	client.disconnect()
     
 client = mqtt.Client()
 client.connect("localhost",1883,60)
