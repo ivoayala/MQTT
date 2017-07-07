@@ -12,7 +12,7 @@ def on_message(client, userdata, msg):
   if msg.payload.decode() == "Hello world!":
 	print(str(msg.payload))	#print message sent    
 	#print("Yes!")
-    	client.disconnect()
+#    	client.disconnect()
     
 client = mqtt.Client()
 client.connect("localhost",1883,60)
